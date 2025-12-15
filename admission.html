@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Admission Form | I'M Kindergarten & Day Care</title>
+
+<!-- Styles -->
+<style>
+:root{
+    --primary:#2c7be5;
+    --secondary:#00c6ff;
+    --glass:rgba(255,255,255,0.88);
+}
+
+*{
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    background:
+        linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
+        url("https://ik.imagekit.io/s95tumxuk/Kids-gallery/image2.jpg?updatedAt=1763388723584");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    background:white;
+    padding:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+header h1{
+    margin:10px 0 5px;
+    font-size:clamp(1.6rem,5vw,2.4rem);
+}
+
+header p{
+    font-size:1rem;
+    opacity:.95;
+}
+
+nav{
+    background:#1c5db6;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    padding:12px 16px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover, nav a.active{
+    background:#144a94;
+}
+
+section{
+    background:var(--glass);
+    margin:18px auto;
+    padding:25px;
+    border-radius:18px;
+    max-width:800px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+h2{
+    color:var(--primary);
+    margin-top:0;
+    text-align:center;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+input, select, textarea, button{
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:1rem;
+}
+
+button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:var(--secondary);
+}
+
+.fee{
+    font-weight:bold;
+    font-size:1.1rem;
+    margin-bottom:10px;
+    color:#333;
+    text-align:right;
+}
+
+footer{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+    section{
+        margin:12px;
+        padding:20px;
+    }
+    nav a{
+        padding:10px 12px;
+        font-size:.95rem;
+    }
+}
+
+@media(max-width:480px){
+    header{
+        padding:28px 12px;
+    }
+    .logo{
+        width:100px;
+        height:100px;
+    }
+    footer{
+        font-size:.9rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://via.placeholder.com/300" alt="School Logo">
+    </div>
+    <h1>I'M Kindergarten & Day Care School</h1>
+    <p>Discipline • Knowledge • Excellence</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="admission.html" class="active">Admission</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section>
+    <h2>Online Admission Form</h2>
+    <p class="fee">Registration Fee: UGX 30,000</p>
+
+    <form id="admissionForm">
+        <input type="text" name="surname" placeholder="Surname" required>
+        <input type="text" name="secondname" placeholder="Second Name" required>
+        <input type="text" name="lastname" placeholder="Last Name (Optional)">
+        <input type="number" name="age" placeholder="Age" min="1" max="12" required>
+        <select name="class" required>
+            <option value="">Select Class</option>
+            <option>Baby Class</option>
+            <option>Middle Class</option>
+        </select>
+        <input type="text" name="father" placeholder="Father's Name" required>
+        <input type="text" name="mother" placeholder="Mother's Name" required>
+        <textarea name="address" placeholder="Address" required></textarea>
+        <textarea name="medical" placeholder="Medical Info / Allergies (if any)"></textarea>
+        <textarea name="otherinfo" placeholder="Any Other Information"></textarea>
+        <button type="button" id="downloadBtn">Download Form as PDF</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 I'M Kindergarten & Day Care School</p>
+</footer>
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const { jsPDF } = window.jspdf;
+
+document.getElementById("downloadBtn").addEventListener("click", function(){
+    const form = document.getElementById("admissionForm");
+
+    const data = {
+        "Surname": form.surname.value,
+        "Second Name": form.secondname.value,
+        "Last Name": form.lastname.value,
+        "Age": form.age.value,
+        "Class": form.class.value,
+        "Father": form.father.value,
+        "Mother": form.mother.value,
+        "Address": form.address.value,
+        "Medical Info": form.medical.value,
+        "Other Info": form.otherinfo.value,
+        "Registration Fee": "UGX 30,000"
+    };
+
+    const doc = new jsPDF();
+
+    // Header
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.text("I'M Kindergarten & Day Care School", 15, 15);
+    doc.setFontSize(14);
+    doc.text("Admission Form", 15, 25);
+
+    // Logo
+    const imgUrl = "https://via.placeholder.com/80"; // small logo
+    doc.addImage(imgUrl, "PNG", 160, 10, 35, 35);
+
+    // Photo Box
+    doc.setDrawColor(0);
+    doc.setLineWidth(0.8);
+    doc.rect(160, 50, 40, 50); 
+    doc.setFontSize(10);
+    doc.text("Student Photo", 162, 75);
+
+    let y = 55;
+    const startX = 15;
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+
+    // Student Information
+    doc.setFont("helvetica", "bold");
+    doc.text("Student Information", startX, y);
+    y += 8;
+    doc.setFont("helvetica", "normal");
+    ["Surname", "Second Name", "Last Name", "Age", "Class"].forEach(key => {
+        doc.text(`${key}: ${data[key]}`, startX, y);
+        y += 10;
+    });
+
+    y += 4;
+    doc.setFont("helvetica", "bold");
+    doc.text("Parent/Guardian Information", startX, y);
+    y += 8;
+    doc.setFont("helvetica", "normal");
+    ["Father", "Mother", "Address"].forEach(key => {
+        doc.text(`${key}: ${data[key]}`, startX, y);
+        y += 10;
+    });
+
+    y += 4;
+    doc.setFont("helvetica", "bold");
+    doc.text("Additional Information", startX, y);
+    y += 8;
+    doc.setFont("helvetica", "normal");
+    ["Medical Info", "Other Info"].forEach(key => {
+        doc.text(`${key}: ${data[key]}`, startX, y);
+        y += 10;
+    });
+
+    y += 4;
+    doc.setFont("helvetica", "bold");
+    doc.text(`Registration Fee: ${data["Registration Fee"]}`, startX, y);
+
+    doc.save(`${form.surname.value}_${form.secondname.value}_AdmissionForm.pdf`);
+});
+</script>
+
+</body>
+</html>

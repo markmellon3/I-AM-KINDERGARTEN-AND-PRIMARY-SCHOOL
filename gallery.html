@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Gallery | I'M Kindergarten & Day Care</title>
+
+<style>
+:root{
+    --primary:#2c7be5;
+    --overlay:rgba(0,0,0,0.6);
+}
+
+*{
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#f4f7fc;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:
+        linear-gradient(var(--overlay),var(--overlay)),
+        url("https://ik.imagekit.io/s95tumxuk/SCHOOL/image6.jpg?updatedAt=1765823105190");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:clamp(1.8rem,5vw,2.6rem);
+}
+
+header p{
+    opacity:.95;
+}
+
+/* ===== NAV ===== */
+nav{
+    background:#1c5db6;
+    display:flex;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    padding:14px 18px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:#144a94;
+}
+
+/* ===== SECTION ===== */
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 15px;
+}
+
+h2{
+    text-align:center;
+    color:var(--primary);
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.filters button{
+    padding:10px 18px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    background:#e9eefb;
+    font-weight:600;
+}
+
+.filters button.active,
+.filters button:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:14px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+
+.lightbox span{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:linear-gradient(135deg,#2c7be5,#00c6ff);
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:480px){
+    .gallery img{height:180px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>School Gallery</h1>
+    <p>Moments of learning, play & growth</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+</nav>
+
+<section>
+    <h2>Our Happy Moments</h2>
+
+    <!-- FILTERS -->
+    <div class="filters">
+        <button class="active" onclick="filterGallery('all',this)">All</button>
+        <button onclick="filterGallery('class',this)">Class</button>
+        <button onclick="filterGallery('sports',this)">Sports</button>
+        <button onclick="filterGallery('events',this)">Events</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery" id="gallery">
+        <!-- CLASS -->
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/images%20(3).jpeg?updatedAt=1765823095340" data-category="class" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/images%20(4).jpeg?updatedAt=1765823105258" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image10.jpg?updatedAt=1765823099631" data-category="class" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/school%20.jpg" data-category="class" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2025.jpg?updatedAt=1765832090761" data-category="class" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2022.jpg?updatedAt=1765832101008" data-category="class" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/school1.jpg?updatedAt=1765832106529" data-category="class" onclick="openLightbox(this.src)">
+
+        <!-- SPORTS -->
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%208.jpg?updatedAt=1765832092237" data-category="sports" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2012.jpg?updatedAt=1765832091700" data-category="sports" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School11.jpg?updatedAt=1765832095476" data-category="sports" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2018.jpg?updatedAt=1765832095784" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2017.jpg?updatedAt=1765832093899" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2013.jpg?updatedAt=1765832096311" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/school3.jpg?updatedAt=1765832092009" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2021.jpg?updatedAt=1765832096765" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School20.jpg?updatedAt=1765832094896" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image7.jpg?updatedAt=1765823105863" data-category="sports" onclick="openLightbox(this.src)">
+        
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/School%2020.jpg?updatedAt=1765832097468" data-category="sports" onclick="openLightbox(this.src)">
+
+        <!-- EVENTS -->
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image6.jpg?updatedAt=1765823105190" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image8.jpg?updatedAt=1765823106543" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/Image11.jpg?updatedAt=1765823099054" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image12.jpg?updatedAt=1765823104570" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image7.jpg?updatedAt=1765823105863" data-category="events" onclick="openLightbox(this.src)">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image.jpg?updatedAt=1765823104001" data-category="events" onclick="openLightbox(this.src)">
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span onclick="closeLightbox()">×</span>
+    <img id="lightboxImg">
+</div>
+
+<footer>
+    <p>© 2025 I'M Kindergarten & Day Care School</p>
+</footer>
+
+<script>
+/* ===== LIGHTBOX ===== */
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightboxImg").src=src;
+}
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+/* ===== FILTER ===== */
+function filterGallery(category,btn){
+    document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".gallery img").forEach(img=>{
+        img.style.display =
+            category==="all" || img.dataset.category===category
+            ? "block":"none";
+    });
+}
+
+/* ===== AUTO SLIDE REMOVED ===== */
+// All auto-slide code has been deleted
+</script>
+</body>
+</html>

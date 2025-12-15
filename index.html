@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'M KINDERGARTEN AND DAY CARE</title>
+
+<style>
+:root{
+    --primary:#2c7be5;
+    --secondary:#00c6ff;
+    --glass:rgba(255,255,255,0.88);
+}
+
+*{
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    /* Softer overlay so image shows clearly */
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.55),
+            rgba(255,255,255,0.55)
+        ),
+        url("https://ik.imagekit.io/s95tumxuk/SCHOOL/images%20(4).jpeg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+}
+
+/* Logo */
+.logo{
+    width:120px;
+    height:120px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    background:white;
+    padding:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+header h1{
+    margin:10px 0 5px;
+    font-size:clamp(1.6rem,5vw,2.4rem);
+}
+
+header p{
+    font-size:1rem;
+    opacity:.95;
+}
+
+/* ===== NAV ===== */
+nav{
+    background:#1c5db6;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    padding:12px 16px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:#144a94;
+}
+
+/* ===== SECTIONS ===== */
+section{
+    background:var(--glass);
+    margin:18px auto;
+    padding:25px;
+    border-radius:18px;
+    max-width:1100px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+h2{
+    color:var(--primary);
+    margin-top:0;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:rgba(247,250,255,0.95);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:12px;
+}
+
+/* ===== TABLE ===== */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+table th,table td{
+    border:1px solid #e0e0e0;
+    padding:12px;
+    text-align:center;
+}
+
+table th{
+    background:var(--primary);
+    color:white;
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:12px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== FORM ===== */
+form{
+    max-width:480px;
+    margin:auto;
+}
+
+input,select,textarea,button{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:1rem;
+}
+
+button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1c5db6;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:30px;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media(max-width:768px){
+    section{
+        margin:12px;
+        padding:20px;
+    }
+
+    nav a{
+        padding:10px 12px;
+        font-size:.95rem;
+    }
+}
+
+@media(max-width:480px){
+    header{
+        padding:28px 12px;
+    }
+
+    .logo{
+        width:100px;
+        height:100px;
+    }
+
+    footer{
+        font-size:.9rem;
+    }
+}
+
+header{
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://ik.imagekit.io/s95tumxuk/SCHOOL/school%20.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <!-- Replace this with your real logo -->
+        <img src="https://via.placeholder.com/300" alt="School Logo">
+    </div>
+
+    <h1>I'M KINDERGARTEN & PRIMARY SCHOOL </h1>
+    <p>learn & live for Purpose </p>
+    <p>Discipline • Knowledge • Excellence</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#academics">Academics</a>
+    <a href="#fees">Fees</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome</h2>
+    <p>
+        I'm Kindergarten and Day Care School provides quality early childhood education,
+        strong morals, and a safe, loving environment for every child.
+    </p>
+</section>
+
+<section id="about">
+    <h2>Head Teacher’s Message</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Head Teacher">
+            <p>
+                Welcome to I'm Kindergarten & primary school .
+                We nurture young minds through play, care, and guided learning.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="academics">
+    <h2>Academics</h2>
+    <div class="cards">
+        <div class="card">Baby Class</div>
+        <div class="card">Middle Class</div>
+        
+    </div>
+</section>
+
+<section id="fees">
+    <h2>Fees Structure (Per Term)</h2>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Fees (UGX)</th>
+        </tr>
+        <tr>
+            <td>Baby Class</td>
+            <td>------</td>
+        </tr>
+        <tr>
+            <td>Middle Class</td>
+            <td>------</td>
+        </tr>
+        <tr>
+            
+    </table>
+</section>
+
+<section id="gallery">
+    <h2>School Gallery</h2>
+    <div class="gallery">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image9.jpg?updatedAt=1765823098711">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image8.jpg?updatedAt=1765823106543">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/images%20(3).jpeg?updatedAt=1765823095340">
+        <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image6.jpg?updatedAt=1765823105190">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Jokolera Kasangati , Kampala, Uganda</p>
+    <p>📞 0785 061 008 | 0703 936 955 | 0752 300 958 </p>
+    <p>📧 info@imkindergarten.ac.ug</p>
+
+    <!-- Google Map Embed -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.379128287362!2d32.5616097!3d0.4502465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db30031533011%3A0xf239a5d6bec33055!2sIam%20Kindergarten%20And%20Daycare%20Center!5e0!3m2!1sen!2sug!4v1760000000000" 
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius:12px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<style>
+/* Map container for responsiveness */
+.map-container{
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Mobile responsive */
+@media(max-width:768px){
+    .map-container iframe{
+        height:300px;
+    }
+}
+
+@media(max-width:480px){
+    .map-container iframe{
+        height:250px;
+    }
+}
+</style>
+<footer>
+    <p>© 2025 I'M Kindergarten & Day Care School</p>
+</footer>
+
+<script>
+function submitForm(e) {
+    e.preventDefault();
+    alert("Application submitted successfully!");
+}
+</script>
+<!-- Welcome Notification Panel -->
+<div id="welcomePanel">
+    <div class="welcome-content">
+        <h3>Welcome to I'M Kindergarten & Primary School!</h3>
+        <p>REGISTRATION IN PROGRESS </p>
+        <p>We’re glad you’re here. Explore our programs, gallery, and events.</p>
+        <button id="closeWelcome">✕ Close</button>
+    </div>
+</div>
+
+<style>
+#welcomePanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* hidden initially */
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #2c7be5, #00c6ff);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#welcomePanel.show {
+    transform: translate(-50%, -50%) scale(1); /* center and visible */
+    opacity: 1;
+}
+
+#welcomePanel h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+#welcomePanel p {
+    font-size: 0.95rem;
+    margin: 0 0 12px;
+}
+
+#welcomePanel button {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#welcomePanel button:hover {
+    background: rgba(255,255,255,0.5);
+}
+</style>
+
+<script>
+// Show welcome panel after 1 second
+window.addEventListener("load", function() {
+    setTimeout(function(){
+        document.getElementById("welcomePanel").classList.add("show");
+    }, 1000);
+});
+
+// Close panel when user clicks "Close"
+document.getElementById("closeWelcome").addEventListener("click", function(){
+    document.getElementById("welcomePanel").classList.remove("show");
+});
+</script>
+<!-- FLOATING UPDATES BUTTON -->
+<div id="updatesBtn">🔔 Updates</div>
+
+<!-- UPDATES POPUP PANEL -->
+<div id="updatesPanel">
+    <div class="updates-content">
+        <span class="close-updates" onclick="closeUpdates()">✕</span>
+
+        <h3>School Updates</h3>
+
+        <!-- SLIDER -->
+        <div class="slider">
+
+            <!-- IMAGE SLIDE -->
+            <div class="slide active">
+                <img src="https://ik.imagekit.io/s95tumxuk/SCHOOL/image13.jpg?updatedAt=1765823098774">
+            </div>
+
+        
+
+            <!-- VIDEO SLIDE -->
+            <div class="slide">
+                <!-- 🔁 Replace VIDEO_ID with your YouTube video ID -->
+                <iframe
+                    src="https://ik.imagekit.io/s95tumxuk/SCHOOL/Iam_Kindergathen_and_Daycare_concert_is_on_tomorrow_Saturday._...Iam_Kindergathen_and_Daycare_concert_is_on_tomorrow_Saturday._..._See_more.mp4"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="slider-controls">
+            <button onclick="prevSlide()">‹</button>
+            <button onclick="nextSlide()">›</button>
+        </div>
+
+        <p class="update-text">
+            Latest announcements, events, and school activities.
+        </p>
+    </div>
+</div>
+
+<style>
+/* ===== FLOATING BUTTON ===== */
+#updatesBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:linear-gradient(135deg,#2c7be5,#00c6ff);
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    z-index:9999;
+}
+
+/* ===== BACKDROP ===== */
+#updatesPanel{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:10000;
+}
+
+/* ===== PANEL ===== */
+.updates-content{
+    background:white;
+    width:92%;
+    max-width:540px;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    position:relative;
+    animation:popIn .4s ease;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.updates-content h3{
+    color:#2c7be5;
+    margin-top:0;
+}
+
+/* ===== SLIDER ===== */
+.slider{
+    background:#f4f7fc;
+    border-radius:16px;
+    padding:12px;
+    margin:15px 0;
+}
+
+/* SLIDE CONTAINER */
+.slide{
+    display:none;
+    width:100%;
+    height:330px; /* BIG */
+    border-radius:14px;
+}
+
+.slide.active{
+    display:block;
+}
+
+/* IMAGE */
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:14px;
+}
+
+/* VIDEO */
+.slide iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:14px;
+}
+
+/* ===== CONTROLS ===== */
+.slider-controls{
+    display:flex;
+    justify-content:space-between;
+    margin:8px 0;
+}
+
+.slider-controls button{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:none;
+    background:#2c7be5;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.slider-controls button:hover{
+    background:#1c5db6;
+}
+
+/* ===== TEXT ===== */
+.update-text{
+    color:#444;
+    font-size:1rem;
+}
+
+/* ===== CLOSE ===== */
+.close-updates{
+    position:absolute;
+    top:12px;
+    right:15px;
+    font-size:24px;
+    cursor:pointer;
+    color:#666;
+}
+
+.close-updates:hover{
+    color:red;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes popIn{
+    from{transform:scale(.85);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:480px){
+    .slide{
+        height:240px;
+    }
+
+    #updatesBtn{
+        bottom:18px;
+        right:15px;
+        padding:12px 15px;
+        font-size:.9rem;
+    }
+}
+</style>
+
+<script>
+/* ===== SLIDER LOGIC ===== */
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index){
+    slides.forEach((slide,i)=>{
+        slide.classList.toggle("active", i === index);
+
+        // Stop video when slide changes
+        const iframe = slide.querySelector("iframe");
+        if(iframe) iframe.src = iframe.src;
+    });
+}
+
+function nextSlide(){
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide(){
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+/* ===== OPEN / CLOSE ===== */
+document.getElementById("updatesBtn").onclick = ()=>{
+    document.getElementById("updatesPanel").style.display="flex";
+};
+
+function closeUpdates(){
+    document.getElementById("updatesPanel").style.display="none";
+}
+
+/* ===== FIRST VISITOR AUTO SHOW ===== */
+window.addEventListener("load",()=>{
+    if(!localStorage.getItem("updatesSeen")){
+        setTimeout(()=>{
+            document.getElementById("updatesPanel").style.display="flex";
+            localStorage.setItem("updatesSeen","true");
+        },1000);
+    }
+});
+</script>
+<!-- ================= FLOATING REGISTRATION BUTTON ================= -->
+<div id="registerBtn">📞 Registration</div>
+
+<!-- ================= REGISTRATION POPUP PANEL ================= -->
+<div id="registerPanel">
+    <div class="register-box">
+        <span class="close-register" onclick="closeRegister()">✕</span>
+
+        <h3>Registration Contacts</h3>
+        <p>Please call any of the numbers below for registration</p>
+
+        <!-- CONTACT TABLET -->
+        <div class="contact-tablet">
+            <a href="tel:+256785061008" class="contact-btn mtn">
+                📱 MTN<br><span>0785 061 008</span>
+            </a>
+
+            <a href="tel:+256703936955" class="contact-btn airtel">
+                📱 Airtel<br><span>0703 936 955</span>
+            </a>
+
+            <a href="tel:+256752300958" class="contact-btn airtel">
+                📱 Airtel<br><span>0752 300 958</span>
+            </a>
+        </div>
+
+        <!-- OFFICE HOURS NOTICE -->
+        <div class="office-hours">
+            <h4>Office Hours</h4>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+            <p>Saturday: 9:00 AM - 1:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ================= FLOATING BUTTON ================= */
+#registerBtn{
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* 👈 bottom-left */
+    background: linear-gradient(135deg,#2c7be5,#00c6ff);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+#registerBtn:hover{
+    transform: scale(1.06);
+}
+
+/* ================= BACKDROP ================= */
+#registerPanel{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+/* ================= PANEL ================= */
+.register-box{
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 26px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    animation: scaleIn .35s ease;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+}
+
+.register-box h3{
+    color: #2c7be5;
+    margin-top: 0;
+}
+
+.register-box p{
+    color: #555;
+    font-size: .95rem;
+}
+
+/* ================= CONTACT TABLET ================= */
+.contact-tablet{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.contact-btn{
+    display: block;
+    padding: 16px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: .25s;
+}
+
+.contact-btn span{
+    display: block;
+    font-size: .9rem;
+    opacity: .95;
+}
+
+/* NETWORK COLORS */
+.mtn{
+    background: linear-gradient(135deg,#ffcc00,#f2b400);
+    color: #222;
+}
+
+.airtel{
+    background: linear-gradient(135deg,#e60000,#ff3333);
+}
+
+/* HOVER */
+.contact-btn:hover{
+    transform: scale(1.04);
+}
+
+/* ================= OFFICE HOURS ================= */
+.office-hours{
+    margin-top: 20px;
+    background: #f2f7ff;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #d0e2ff;
+}
+
+.office-hours h4{
+    color: #2c7be5;
+    margin: 0 0 6px;
+}
+
+.office-hours p{
+    margin: 2px 0;
+    font-size: .9rem;
+    color: #333;
+}
+
+/* ================= CLOSE BUTTON ================= */
+.close-register{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+}
+
+.close-register:hover{
+    color:red;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes scaleIn{
+    from{
+        transform: scale(.85);
+        opacity:0;
+    }
+    to{
+        transform: scale(1);
+        opacity:1;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:480px){
+    #registerBtn{
+        bottom: 20px;
+        left: 15px;
+        padding: 12px 18px;
+        font-size: .9rem;
+    }
+}
+</style>
+
+<script>
+// ===== SHOW PANEL ON BUTTON CLICK =====
+document.getElementById("registerBtn").addEventListener("click", ()=>{
+    document.getElementById("registerPanel").style.display="flex";
+});
+
+// ===== CLOSE PANEL =====
+function closeRegister(){
+    document.getElementById("registerPanel").style.display="none";
+}
+
+// ===== AUTO SHOW FOR FIRST-TIME VISITORS =====
+window.addEventListener("load", ()=>{
+    const visited = localStorage.getItem("registrationShown");
+    if(!visited){
+        // Show after 1 second
+        setTimeout(()=>{
+            document.getElementById("registerPanel").style.display="flex";
+            localStorage.setItem("registrationShown", "true");
+        }, 1000);
+    }
+});
+</script>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="socials">
+            <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/yourchannel" target="_blank" title="YouTube">
+                <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@yourprofile" target="_blank" title="TikTok">
+                <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+            </a>
+        </div>
+
+        
+        <p>Designed by <a href="https://markmellon3.github.io/Aboutmmindustry-/" target="_blank">mmindustrys</a></p>
+    </div>
+</footer>
+
+<style>
+footer{
+    background: linear-gradient(135deg, #2c7be5, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    position: relative;
+    z-index: 10;
+}
+
+footer .socials{
+    margin-bottom: 15px;
+}
+
+footer .socials a{
+    display: inline-block;
+    margin: 0 8px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+footer .socials a img{
+    width: 32px;
+    height: 32px;
+}
+
+footer .socials a:hover{
+    transform: scale(1.2);
+    opacity: 0.85;
+}
+
+footer p{
+    margin: 5px 0;
+}
+
+footer a{
+    color: white;
+    text-decoration: underline;
+}
+
+footer a:hover{
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media(max-width:480px){
+    footer .socials a img{
+        width: 28px;
+        height: 28px;
+    }
+}
+</style>
+</body>
+</html>
