@@ -364,9 +364,7 @@ header{
     }
 }
 </style>
-<footer>
-    <p>© 2025 I'M Kindergarten & Day Care School</p>
-</footer>
+
 
 <script>
 function submitForm(e) {
@@ -962,5 +960,129 @@ footer a:hover{
     }
 }
 </style>
+<style>
+/* ================= GLASS CARD UPGRADE ================= */
+.card{
+    background: rgba(255,255,255,0.18); /* glass */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.18),
+        inset 0 0 0 rgba(255,255,255,0.3);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+    animation: glassFadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Card hover animation */
+.card:hover{
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.28),
+        inset 0 0 12px rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.25);
+}
+
+/* ================= CARD IMAGE GLASS EFFECT ================= */
+.card img{
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.4s ease;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+}
+
+/* ================= STAGGER ANIMATION ================= */
+.cards .card:nth-child(1){ animation-delay: 0.1s; }
+.cards .card:nth-child(2){ animation-delay: 0.25s; }
+.cards .card:nth-child(3){ animation-delay: 0.4s; }
+.cards .card:nth-child(4){ animation-delay: 0.55s; }
+
+/* ================= KEYFRAMES ================= */
+@keyframes glassFadeUp{
+    from{
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media(max-width:768px){
+    .card:hover{
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+</style>
+<style>
+/* ================= SCROLL ANIMATIONS ================= */
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+/* Default reveal */
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= CARD-SPECIFIC EFFECT ================= */
+.card.reveal{
+    transform: translateY(60px) scale(0.92);
+    filter: blur(4px);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.22,.61,.36,1),
+        filter .9s ease;
+}
+
+.card.reveal.active{
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Hover still works */
+.card:hover{
+    will-change: transform;
+}
+</style>
+
+<script>
+/* ===== SCROLL REVEAL (IMPROVED FOR CARDS) ===== */
+const revealElements = document.querySelectorAll(
+    "section, .card, table, .gallery img"
+);
+
+revealElements.forEach(el => el.classList.add("reveal"));
+
+const revealOnScroll = ()=>{
+    const trigger = window.innerHeight * 0.9;
+
+    revealElements.forEach((el, index)=>{
+        const top = el.getBoundingClientRect().top;
+
+        if(top < trigger){
+            /* stagger ONLY cards */
+            if(el.classList.contains("card")){
+                el.style.transitionDelay = `${index * 0.08}s`;
+            }
+            el.classList.add("active");
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
 </body>
 </html>
